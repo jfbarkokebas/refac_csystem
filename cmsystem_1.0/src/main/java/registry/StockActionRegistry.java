@@ -16,13 +16,10 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Sale;
-import service.PurchaseService;
-import service.StockService;
+import services.StockService;
 import servlets.StockServlet;
 import utils.Const;
 import utils.HandleForward;
-import utils.HandleStrings;
 import utils.HandleTimeData;
 import utils.PtBr;
 
@@ -36,7 +33,7 @@ public class StockActionRegistry {
 		registry.put("sell", new GetDataToSell());
 		registry.put("stock", new GetStockInfoAjax());
 		registry.put("updateStock", new UpdateStock());
-		registry.put("detail", new GetStockInfoToPurchase());
+//		registry.put("detail", new GetStockInfoToPurchase());
 		registry.put("ownerStock", new GetInfoFromStockOwner());
 		registry.put("searchByName", new SearchStockInfoByNameLetters());
 		registry.put("searchProduct", new SearchStockInfoByProduct());
@@ -120,7 +117,7 @@ class GetDataToSell implements ActionHandler {
 				return;
 			}
 
-			Double resultStock = ownerStock.getQuantity();
+			Double resultStock = ownerStock.getNumQuantity();
 
 			request.setAttribute("productID", productID);
 			request.setAttribute("clientID", Const.OWNER_ID);
@@ -208,48 +205,48 @@ class UpdateStock implements ActionHandler {
 	
 }
 
-class GetStockInfoToPurchase implements ActionHandler {
-	private StockService service = new StockService();
-	private PurchaseService purchaseService = new PurchaseService();
+//class GetStockInfoToPurchase implements ActionHandler {
+//	private StockService service = new StockService();
+//	private PurchaseService purchaseService = new PurchaseService();
+//	
+//	@Override
+//	public void execute(HttpServletRequest request, HttpServletResponse response, Logger logger)
+//			throws ServletException, IOException {
+//		
+//		try {
+//			
+//			String stockId = request.getParameter("stockId");
+//			String clientID = request.getParameter("clientID");
+//			StockDTO stock = service.getStockById(stockId);
+//			
+//			Long productID = "pimenta".equalsIgnoreCase(stock.getProduct()) ? 2L : 1L;
+//			Sale saleActive = this.purchaseService.getActiveSaleByProductID(productID);
+//			
+//			if(saleActive != null) {
+//				
+//				request.setAttribute("saleActive", saleActive);
+//				String fmtPendency = PtBr.formatDecimal(saleActive.getPendency());
+//				request.setAttribute("fmtPendency", fmtPendency);
+//			}
+//
+//			request.setAttribute("stockId", stockId);
+//			request.setAttribute("clientName", stock.getName());
+//			request.setAttribute("clientID", clientID);
+//			request.setAttribute("clientProduct", stock.getProduct());
+//			request.setAttribute("amount", stock.getQuantity());
+//			request.setAttribute("cpf", stock.getCpf());
+//			request.setAttribute("unit", stock.getUnit());
+//			RequestDispatcher rd = request.getRequestDispatcher(Const.ROOT_PAGE_PATH + "/receipt-stock-purchase.jsp");
+//			rd.forward(request, response);
+//
+//		} catch (Exception e) {
+//			logger.error("Falha ao buscar os detalhes do estoque", e);
+//			HandleForward.errorForward(request, response, "Estoque não encontrado", "erro.jsp");
+//		}
+//		
+//	}
 	
-	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response, Logger logger)
-			throws ServletException, IOException {
-		
-		try {
-			
-			String stockId = request.getParameter("stockId");
-			String clientID = request.getParameter("clientID");
-			StockDTO stock = service.getStockById(stockId);
-			
-			Long productID = "pimenta".equalsIgnoreCase(stock.getProduct()) ? 2L : 1L;
-			Sale saleActive = this.purchaseService.getActiveSaleByProductID(productID);
-			
-			if(saleActive != null) {
-				
-				request.setAttribute("saleActive", saleActive);
-				String fmtPendency = PtBr.formatDecimal(saleActive.getPendency());
-				request.setAttribute("fmtPendency", fmtPendency);
-			}
-
-			request.setAttribute("stockId", stockId);
-			request.setAttribute("clientName", stock.getName());
-			request.setAttribute("clientID", clientID);
-			request.setAttribute("clientProduct", stock.getProduct());
-			request.setAttribute("amount", stock.getQuantity());
-			request.setAttribute("cpf", stock.getCpf());
-			request.setAttribute("unit", stock.getUnit());
-			RequestDispatcher rd = request.getRequestDispatcher(Const.ROOT_PAGE_PATH + "/receipt-stock-purchase.jsp");
-			rd.forward(request, response);
-
-		} catch (Exception e) {
-			logger.error("Falha ao buscar os detalhes do estoque", e);
-			HandleForward.errorForward(request, response, "Estoque não encontrado", "erro.jsp");
-		}
-		
-	}
-	
-}
+//}
 
 class GetInfoFromStockOwner implements ActionHandler {
 	private StockService service = new StockService();

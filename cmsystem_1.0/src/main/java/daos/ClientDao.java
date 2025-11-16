@@ -224,7 +224,7 @@ public class ClientDao {
 		List<Client> result = new ArrayList<>();
 
 		String sql = "SELECT name, cpf, phone_number, email, adress"
-				+ " FROM cm_system.commodity_system.clients WHERE active = true AND UPPER(name) like UPPER(?)";
+				+ " FROM cm_system.clients WHERE active = true AND UPPER(name) like UPPER(?)";
 
 		Connection connection = null;
 		PreparedStatement stmt = null;
