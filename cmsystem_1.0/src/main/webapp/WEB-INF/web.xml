@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	version="6.0">
+	<welcome-file-list>
+		<welcome-file>opening.html</welcome-file>
+	</welcome-file-list>
+	<session-config>
+        <session-timeout>20</session-timeout> 
+    </session-config>
+
+<!-- 	<servlet> -->
+<!-- 		<description></description> -->
+<!-- 		<display-name>LogoutServlet</display-name> -->
+<!-- 		<servlet-name>LogoutServlet</servlet-name> -->
+<!-- 		<servlet-class>servlets.LogoutServlet</servlet-class> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>LogoutServlet</servlet-name> -->
+<!-- 		<url-pattern>/LogoutServlet</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+<!-- 	<servlet> -->
+<!-- 		<description></description> -->
+<!-- 		<display-name>ClientServlet</display-name> -->
+<!-- 		<servlet-name>ClientServlet</servlet-name> -->
+<!-- 		<servlet-class>servlets.ClientServlet</servlet-class> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>ClientServlet</servlet-name> -->
+<!-- 		<url-pattern>/ClientServlet</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+	
+<!-- 	<servlet> -->
+<!-- 		<description></description> -->
+<!-- 		<display-name>StockEntryServlet</display-name> -->
+<!-- 		<servlet-name>StockEntryServlet</servlet-name> -->
+<!-- 		<servlet-class>servlets.StockEntryServlet</servlet-class> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>StockEntryServlet</servlet-name> -->
+<!-- 		<url-pattern>/StockEntryServlet</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+	
+</web-app>

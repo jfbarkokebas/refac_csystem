@@ -1,0 +1,9 @@
+/build/
+/target/
+
+# Arquivos de configuração do Eclipse
+/.settings/
+
+#end file
+
+*txt

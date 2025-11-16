@@ -1,0 +1,143 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("fonts/Roboto-VariableFont_wdth\,wght.ttf") format("ttf");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url("fonts/Raleway-VariableFont_wght.ttf") format("ttf");
+	font-weight: 400;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-color: #fdfdfd;
+	font-family: Roboto, Raleway;
+}
+
+.main-container {
+	width: 100%;
+	height: 100%;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px;
+	width: 100%;
+	border: 1px solid grey;
+	height: 7vh;
+	background-color: #00a4ef;
+	color: #232323;
+}
+
+#menu-msg {
+	color: #ffc761;
+	animation-name: example;
+	animation-duration: 4s;
+	font-size: 1.6rem;
+}
+
+@keyframes example {
+  0%   {margin-left: 0;}
+  25%   {margin-left: 30px;}
+  50%  {margin-left: 0;}
+  75%  {margin-left: 20px;}
+  100%  {margin-left: 0;}
+}
+
+.msg {
+	font-weight: 500;
+	background-color: orange;
+	margin-top: 20px;
+	font-size: 1.5rem;
+}
+
+.logout-link a {
+	margin: 0 10px 0 30px;
+	cursor: pointer;
+	font-weight: 500;
+	text-decoration: none;
+	transition: 0.3s;
+	color: #232323;
+	font-size: 1.4rem
+}
+
+.logout-link a:hover {
+	color: orange;
+}
+.logout-link:hover {
+	color: orange;
+}
+
+.area-logo {
+	gap: 20px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.area-usuario {
+	font-size: 1.6rem;
+}
+
+.content-area {
+	display: flex;
+	width: 100%;
+	height: 93vh;
+}
+
+/* ------ DROPDOWN ---------*/
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #092B9B;
+	border-radius: 0.4rem;
+	min-width: 150px;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	padding: 8px 0;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 8px 12px;
+	text-decoration: none;
+	display: block;
+	color: #f3e7e7;
+}
+
+.dropdown-content a:hover {
+	background-color: rgba(223, 214, 218, 0.5);
+	border-radius: 6px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+@media (max-width: 1500px) {
+	#menu-msg {
+	font-size: 1.2rem;
+}
+	
+	
+}
+
+/* END FILE */
